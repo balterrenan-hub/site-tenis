@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aulas de Tênis | Renan Balter</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f0f0f;
+            color: white;
+        }
+
+        /* MENU */
+
+        nav {
+            background-color: #161616;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .menu-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: #00ff88;
+        }
+
+        /* TÍTULO */
+
+        .cabecalho {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+
+        .cabecalho h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cabecalho h1 span {
+            color: #00ff88;
+        }
+
+        .cabecalho p {
+            color: #aaa;
+            font-size: 19px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* CARDS */
+
+        .aulas {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 40px 20px 80px;
+        }
+
+        .aula {
+            background-color: #1b1b1b;
+            width: 300px;
+            padding: 35px 25px;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .aula:hover {
+            transform: translateY(-8px);
+        }
+
+        .icone {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .aula h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .aula p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 13px 25px;
+            background-color: #00ff88;
+            color: #111;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            transform: scale(1.05);
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background-color: #161616;
+            text-align: center;
+            padding: 25px;
+            color: #888;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 18px 10px;
+            }
+
+            .menu-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .menu-links a {
+                font-size: 15px;
+            }
+
+            .cabecalho h1 {
+                font-size: 38px;
+            }
+
+            .cabecalho p {
+                font-size: 17px;
+            }
+
+        }
+.perfil-aluno {
+    padding: 90px 20px;
+    background-color: #151515;
+}
+
+.perfil-cabecalho {
+    max-width: 750px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.perfil-cabecalho span {
+    color: #00ff88;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.perfil-cabecalho h2 {
+    font-size: 42px;
+    margin: 18px 0;
+}
+
+.perfil-cabecalho h2 span {
+    color: #00ff88;
+    font-size: inherit;
+}
+
+.perfil-cabecalho p {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.perfil-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.perfil-card {
+    width: 320px;
+    background-color: #1b1b1b;
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.perfil-card:hover {
+    transform: translateY(-8px);
+}
+
+.perfil-icone {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.perfil-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.perfil-card p {
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.botao-perfil {
+    display: inline-block;
+
+    background-color: #00ff88;
+    color: #111;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 13px 25px;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.botao-perfil:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 700px) {
+
+    .perfil-cabecalho h2 {
+        font-size: 34px;
+    }
+
+    .perfil-card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .botao-perfil {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="menu-links">
+
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="aulas.html">Aulas</a>
+            <a href="contato.html">Contato</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="cabecalho">
+
+        <h1>
+            Encontre a aula ideal para
+            <span>você</span>
+        </h1>
+
+        <p>
+            Treinamentos adaptados ao seu nível de jogo,
+            objetivos e ritmo de evolução.
+        </p>
+
+    </section>
+
+
+    <section class="aulas">
+
+        <div class="aula">
+
+            <div class="icone">
+                🎾
+            </div>
+
+            <h2>
+                Aula Individual
+            </h2>
+
+            <p>
+                Treinamento personalizado com foco total
+                nas suas necessidades e objetivos.
+            </p>
+
+            <a href="contato.html" class="botao">
+                Quero saber mais
+            </a>
+
+        </div>
+
+
+        <div class="aula">
+
+            <div class="icone">
+                👥
+            </div>
+
+            <h2>
+                Aula em Dupla
+            </h2>
+
+            <p>
+                Uma opção dinâmica para treinar com
+                um parceiro e evoluir jogando.
+            </p>
+
+            <a href="contato.html" class="botao">
+                Quero saber mais
+            </a>
+
+        </div>
+
+
+        <div class="aula">
+
+            <div class="icone">
+                🏆
+            </div>
+
+            <h2>
+                Treinamento para Competição
+            </h2>
+
+            <p>
+                Trabalho técnico e estratégico para
+                jogadores que buscam melhorar seu desempenho.
+            </p>
+
+            <a href="contato.html" class="botao">
+                Quero saber mais
+            </a>
+
+        </div>
+
+
+        <div class="aula">
+
+            <div class="icone">
+                🌱
+            </div>
+
+            <h2>
+                Iniciantes
+            </h2>
+
+            <p>
+                Comece no tênis do zero com aulas
+                progressivas e adaptadas ao seu ritmo.
+            </p>
+
+            <a href="contato.html" class="botao">
+                Quero começar
+            </a>
+
+        </div>
+
+    </section>
+<section class="perfil-aluno">
+
+    <div class="perfil-cabecalho">
+
+        <span>
+            ENCONTRE O TREINAMENTO IDEAL
+        </span>
+
+        <h2>
+            Qual aula combina com <span>você?</span>
+        </h2>
+
+        <p>
+            Não importa em qual momento você está.
+            Existe um treinamento adequado para o seu objetivo.
+        </p>
+
+    </div>
+
+
+    <div class="perfil-container">
+
+
+        <div class="perfil-card">
+
+            <div class="perfil-icone">
+                🌱
+            </div>
+
+            <h3>
+                Nunca joguei
+            </h3>
+
+            <p>
+                Quer começar no tênis e aprender os fundamentos
+                desde o início? As aulas são adaptadas para quem
+                está tendo os primeiros contatos com o esporte.
+            </p>
+
+            <a
+                href="https://wa.me/SEUNUMERO?text=Olá!%20Nunca%20joguei%20tênis%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20para%20iniciantes."
+                target="_blank"
+                class="botao-perfil"
+            >
+                QUERO COMEÇAR
+            </a>
+
+        </div>
+
+
+        <div class="perfil-card">
+
+            <div class="perfil-icone">
+                📈
+            </div>
+
+            <h3>
+                Já jogo tênis
+            </h3>
+
+            <p>
+                Já tem experiência e quer melhorar golpes,
+                movimentação, consistência e estratégia para
+                evoluir seu desempenho em quadra?
+            </p>
+
+            <a
+                href="https://wa.me/SEUNUMERO?text=Olá!%20Já%20jogo%20tênis%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas."
+                target="_blank"
+                class="botao-perfil"
+            >
+                QUERO EVOLUIR
+            </a>
+
+        </div>
+
+
+        <div class="perfil-card">
+
+            <div class="perfil-icone">
+                🏆
+            </div>
+
+            <h3>
+                Quero competir
+            </h3>
+
+            <p>
+                Busca melhorar seu desempenho para competir?
+                Podemos trabalhar aspectos técnicos, táticos
+                e preparação específica para seus objetivos.
+            </p>
+
+            <a
+                href="https://wa.me/5521979274696?text=Olá!%20Tenho%20interesse%20em%20treinamento%20para%20competição%20e%20gostaria%20de%20saber%20mais."
+                target="_blank"
+                class="botao-perfil"
+            >
+                QUERO TREINAR
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+    <footer>
+
+        © 2026 Renan Balter - Professor de Tênis
+
+    </footer>
+
+</body>
+</html>

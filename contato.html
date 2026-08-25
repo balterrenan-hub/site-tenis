@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contato | Renan Balter - Professor de Tênis</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f0f0f;
+            color: white;
+        }
+
+        /* MENU */
+
+        nav {
+            background-color: #161616;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .menu-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: #00ff88;
+        }
+
+        /* CONTATO */
+
+        .contato-area {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contato-card {
+            max-width: 700px;
+            width: 100%;
+            background-color: #1b1b1b;
+            padding: 60px 30px;
+            border-radius: 20px;
+        }
+
+        .icone {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .contato-card h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .contato-card h1 span {
+            color: #00ff88;
+        }
+
+        .contato-card p {
+            color: #aaa;
+            font-size: 19px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        /* BOTÃO WHATSAPP */
+
+        .botao-whatsapp {
+            display: inline-block;
+            background-color: #00ff88;
+            color: #111;
+            text-decoration: none;
+            font-size: 19px;
+            font-weight: bold;
+            padding: 18px 35px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .botao-whatsapp:hover {
+            transform: scale(1.05);
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background-color: #161616;
+            text-align: center;
+            padding: 25px;
+            color: #888;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 600px) {
+
+            .menu-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .menu-links a {
+                font-size: 15px;
+            }
+
+            .contato-card {
+                padding: 45px 20px;
+            }
+
+            .contato-card h1 {
+                font-size: 38px;
+            }
+
+            .contato-card p {
+                font-size: 17px;
+            }
+
+            .botao-whatsapp {
+                width: 100%;
+                padding: 17px 10px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="menu-links">
+
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="aulas.html">Aulas</a>
+            <a href="contato.html">Contato</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="contato-area">
+
+        <div class="contato-card">
+
+            <div class="icone">
+                🎾
+            </div>
+
+            <h1>
+                Vamos começar a sua
+                <span>evolução?</span>
+            </h1>
+
+            <p>
+                Quer saber mais sobre as aulas de tênis,
+                horários e disponibilidade?
+                Entre em contato diretamente pelo WhatsApp.
+            </p>
+
+            <a
+                href="https://wa.me/5521979274696?text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20de%20tênis."
+                target="_blank"
+                class="botao-whatsapp"
+            >
+                FALAR COMIGO NO WHATSAPP 📱
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 Renan Balter - Professor de Tênis
+
+    </footer>
+
+</body>
+</html>

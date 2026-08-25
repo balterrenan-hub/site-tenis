@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre | Renan Balter - Professor de Tênis</title>
+
+    <!-- Leaflet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f0f0f;
+            color: white;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        nav {
+            background-color: #161616;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .menu-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: #00ff88;
+        }
+
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        .cabecalho {
+            text-align: center;
+            padding: 80px 20px 50px;
+        }
+
+        .cabecalho h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .cabecalho h1 span {
+            color: #00ff88;
+        }
+
+        .cabecalho p {
+            max-width: 700px;
+            margin: auto;
+            color: #aaa;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           SOBRE O PROFESSOR
+        ========================= */
+
+        .sobre {
+            padding: 50px 20px 90px;
+        }
+
+        .sobre-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 60px;
+        }
+
+        .sobre-texto {
+            max-width: 650px;
+        }
+
+        .sobre-texto h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .sobre-texto h2 span {
+            color: #00ff88;
+        }
+
+        .sobre-texto p {
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .experiencia {
+            width: 300px;
+
+            background-color: #1b1b1b;
+
+            padding: 40px 30px;
+
+            border-radius: 20px;
+
+            text-align: center;
+        }
+
+        .experiencia .icone {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .experiencia h3 {
+            font-size: 32px;
+            margin-bottom: 10px;
+
+            color: #00ff88;
+        }
+
+        .experiencia p {
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           LOCAIS
+        ========================= */
+
+        .locais {
+            padding: 90px 20px;
+
+            background-color: #151515;
+
+            text-align: center;
+        }
+
+        .locais h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .locais h2 span {
+            color: #00ff88;
+        }
+
+        .locais-subtitulo {
+            color: #aaa;
+            font-size: 18px;
+
+            margin-bottom: 45px;
+        }
+
+        .locais-container {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .local {
+            width: 280px;
+
+            background-color: #1b1b1b;
+
+            padding: 30px 20px;
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .local:hover {
+            transform: translateY(-6px);
+        }
+
+        .local .icone {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .local h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .local p {
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           MAPA
+        ========================= */
+
+        .mapa-titulo {
+            margin-top: 60px;
+            margin-bottom: 15px;
+
+            font-size: 30px;
+        }
+
+        .mapa-descricao {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        #mapa {
+            width: 100%;
+            max-width: 1000px;
+
+            height: 450px;
+
+            margin: 0 auto;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            border: 2px solid #292929;
+        }
+
+
+        /* =========================
+           BENEFÍCIOS
+        ========================= */
+
+        .beneficios {
+            padding: 90px 20px;
+
+            text-align: center;
+        }
+
+        .beneficios h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .beneficios h2 span {
+            color: #00ff88;
+        }
+
+        .beneficios-subtitulo {
+            color: #aaa;
+
+            font-size: 18px;
+
+            margin-bottom: 45px;
+        }
+
+        .beneficios-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .beneficio {
+            width: 250px;
+
+            background-color: #1b1b1b;
+
+            padding: 30px 20px;
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .beneficio:hover {
+            transform: translateY(-6px);
+        }
+
+        .beneficio .icone {
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .beneficio h3 {
+            margin-bottom: 12px;
+
+            font-size: 21px;
+        }
+
+        .beneficio p {
+            color: #aaa;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           CHAMADA FINAL
+        ========================= */
+
+        .chamada {
+            padding: 80px 20px;
+
+            background-color: #151515;
+
+            text-align: center;
+        }
+
+        .chamada h2 {
+            font-size: 38px;
+
+            margin-bottom: 20px;
+        }
+
+        .chamada p {
+            color: #aaa;
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
+        }
+
+        .botao {
+            display: inline-block;
+
+            background-color: #00ff88;
+
+            color: #111;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            padding: 16px 30px;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background-color: #161616;
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #888;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .menu-links {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .menu-links a {
+                font-size: 15px;
+            }
+
+            .cabecalho h1 {
+                font-size: 38px;
+            }
+
+            .sobre-container {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .experiencia {
+                width: 100%;
+
+                max-width: 350px;
+            }
+
+            .locais h2,
+            .beneficios h2 {
+                font-size: 34px;
+            }
+
+            #mapa {
+                height: 350px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <nav>
+
+        <div class="menu-links">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="sobre.html">
+                Sobre
+            </a>
+
+            <a href="aulas.html">
+                Aulas
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         CABEÇALHO
+    ========================= -->
+
+    <section class="cabecalho">
+
+        <h1>
+
+            Sobre <span>mim</span> 🎾
+
+        </h1>
+
+        <p>
+
+            Conheça um pouco mais sobre meu trabalho,
+            minha experiência e os locais onde ministro
+            minhas aulas de tênis.
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIÊNCIA
+    ========================= -->
+
+    <section class="sobre">
+
+        <div class="sobre-container">
+
+
+            <div class="sobre-texto">
+
+                <h2>
+
+                    Minha experiência com o
+                    <span>tênis</span>
+
+                </h2>
+
+
+                <p>
+
+                    Sou Renan Balter, professor de tênis
+                    com <strong>12 anos de experiência</strong>
+                    no ensino e desenvolvimento de jogadores.
+
+                </p>
+
+
+                <p>
+
+                    Ao longo dessa trajetória, tenho trabalhado
+                    com alunos de diferentes níveis, desde pessoas
+                    que nunca tiveram contato com o tênis até
+                    jogadores que buscam evoluir tecnicamente.
+
+                </p>
+
+
+                <p>
+
+                    Meu objetivo é oferecer um treinamento
+                    personalizado, respeitando o nível e os
+                    objetivos de cada aluno, tornando o processo
+                    de evolução mais eficiente e prazeroso.
+
+                </p>
+
+            </div>
+
+
+            <div class="experiencia">
+
+                <div class="icone">
+
+                    🎾
+
+                </div>
+
+                <h3>
+
+                    12 anos
+
+                </h3>
+
+                <p>
+
+                    de experiência dando aulas de tênis
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LOCAIS
+    ========================= -->
+
+    <section class="locais">
+
+        <h2>
+
+            Onde <span>dou aulas</span>
+
+        </h2>
+
+
+        <p class="locais-subtitulo">
+
+            Atualmente ministro aulas em três locais
+            no Rio de Janeiro.
+
+        </p>
+
+
+        <div class="locais-container">
+
+
+            <!-- MELLO -->
+
+            <div class="local">
+
+                <div class="icone">
+
+                    📍
+
+                </div>
+
+                <h3>
+
+                    Mello Tênis Clube
+
+                </h3>
+
+                <p>
+
+                    Rua Caroen, 171
+
+                </p>
+
+            </div>
+
+
+            <!-- LEME -->
+
+            <div class="local">
+
+                <div class="icone">
+
+                    📍
+
+                </div>
+
+                <h3>
+
+                    Leme Tênis Clube
+
+                </h3>
+
+                <p>
+
+                    Rua Gustavo Sampaio, 74
+
+                </p>
+
+            </div>
+
+
+            <!-- COCOTÁ -->
+
+            <div class="local">
+
+                <div class="icone">
+
+                    📍
+
+                </div>
+
+                <h3>
+
+                    Esporte Clube Cocotá
+
+                </h3>
+
+                <p>
+
+                    Rua Tenente Cleto Campello, 497
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- MAPA -->
+
+        <h3 class="mapa-titulo">
+
+            Encontre o local mais
+            <span style="color:#00ff88;">
+                conveniente para você
+            </span>
+
+        </h3>
+
+
+        <p class="mapa-descricao">
+
+            Confira no mapa os locais onde ministro
+            minhas aulas de tênis.
+
+        </p>
+
+
+        <div id="mapa"></div>
+
+
+    </section>
+
+
+    <!-- =========================
+         BENEFÍCIOS
+    ========================= -->
+
+    <section class="beneficios">
+
+
+        <h2>
+
+            Benefícios de praticar
+            <span>tênis</span>
+
+        </h2>
+
+
+        <p class="beneficios-subtitulo">
+
+            Muito mais do que aprender a jogar,
+            o tênis pode fazer parte de uma rotina
+            mais ativa e prazerosa.
+
+        </p>
+
+
+        <div class="beneficios-container">
+
+
+            <div class="beneficio">
+
+                <div class="icone">
+
+                    💪
+
+                </div>
+
+                <h3>
+
+                    Condicionamento físico
+
+                </h3>
+
+                <p>
+
+                    O tênis envolve deslocamentos,
+                    acelerações e movimentos constantes.
+
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <div class="icone">
+
+                    🧠
+
+                </div>
+
+                <h3>
+
+                    Estratégia e concentração
+
+                </h3>
+
+                <p>
+
+                    O esporte exige tomada de decisão,
+                    leitura do jogo e concentração.
+
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <div class="icone">
+
+                    ⚡
+
+                </div>
+
+                <h3>
+
+                    Agilidade e coordenação
+
+                </h3>
+
+                <p>
+
+                    Os movimentos do tênis ajudam a
+                    trabalhar coordenação, equilíbrio
+                    e agilidade.
+
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <div class="icone">
+
+                    😊
+
+                </div>
+
+                <h3>
+
+                    Bem-estar
+
+                </h3>
+
+                <p>
+
+                    Praticar uma atividade física pode
+                    contribuir para uma rotina mais ativa
+                    e prazerosa.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHAMADA FINAL
+    ========================= -->
+
+    <section class="chamada">
+
+
+        <h2>
+
+            Quer começar a jogar?
+
+        </h2>
+
+
+        <p>
+
+            Entre em contato e descubra a melhor opção
+            de aula para você.
+
+        </p>
+
+
+        <a
+            href="https://wa.me/SEUNUMERO?text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20de%20tênis."
+            target="_blank"
+            class="botao"
+        >
+
+            FALAR NO WHATSAPP 📱
+
+        </a>
+
+
+    </section>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
+
+    <footer>
+
+        © 2026 Renan Balter - Professor de Tênis
+
+    </footer>
+
+
+    <!-- =========================
+         LEAFLET
+    ========================= -->
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+    <script>
+
+        /* =========================
+           CRIA O MAPA
+        ========================= */
+
+        const mapa = L.map("mapa").setView(
+            [-22.8500, -43.2400],
+            11
+        );
+
+
+        /* =========================
+           MAPA OPENSTREETMAP
+        ========================= */
+
+        L.tileLayer(
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+
+                attribution:
+                    "&copy; OpenStreetMap contributors",
+
+            }
+
+        ).addTo(mapa);
+
+
+        /* =========================
+           MELLO TÊNIS CLUBE
+        ========================= */
+
+        L.marker([
+            -22.8318,
+            -43.3200
+        ])
+
+        .addTo(mapa)
+
+        .bindPopup(`
+
+            <strong>
+                Mello Tênis Clube
+            </strong>
+
+            <br>
+
+            Rua Caroen, 171
+
+        `);
+
+
+        /* =========================
+           LEME TÊNIS CLUBE
+        ========================= */
+
+        L.marker([
+            -22.9630,
+            -43.1715
+        ])
+
+        .addTo(mapa)
+
+        .bindPopup(`
+
+            <strong>
+                Leme Tênis Clube
+            </strong>
+
+            <br>
+
+            Rua Gustavo Sampaio, 74
+
+        `);
+
+
+        /* =========================
+           ESPORTE CLUBE COCOTÁ
+        ========================= */
+
+        L.marker([
+            -22.8070,
+            -43.1829
+        ])
+
+        .addTo(mapa)
+
+        .bindPopup(`
+
+            <strong>
+                Esporte Clube Cocotá
+            </strong>
+
+            <br>
+
+            Rua Tenente Cleto Campello, 497
+
+        `);
+
+
+    </script>
+
+
+</body>
+
+</html>
